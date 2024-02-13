@@ -68,7 +68,7 @@ class llm:
         self.full_message_history.append({'role': 'assistant', 'content': ai_message})
         return ai_message
 
-    #~#~#~# Methods for interacting with OpenAI's Chat Completions EndPoint - You probably won't need to edit anything below this line. #~#~#~#
+    #~#~#~# Methods for interacting with OpenAI's Chat Completions EndPoint #~#~#~#
     def gpt4_conversation(self, messages: list, json_response: bool = False, model: str = "gpt-4-1106-preview"):
         """
         Initiates a conversation with the GPT-4 language model using the specified parameters.
@@ -107,7 +107,7 @@ class llm:
         )
 
         # Check if the total token usage exceeds the limit
-        # DO NOT CHANGE THIS - This is a requirement for the challenge.
+        # DO NOT REMOVE THIS - This is a requirement for the challenge - you can make it smaller if you like
         if response.usage.total_tokens > 4096:
             raise ValueError("CHALLENGE CONTEXT WINDOW EXCEEDED: The context window now exceeds the 4096 token limit. Please try again with a shorter prompt.")
 
